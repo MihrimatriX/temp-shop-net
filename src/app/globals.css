@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Pazar yeri teması — Trendyol / Hepsiburada tarzı turuncu + nötr */
+:root {
+  --mp-orange: #f27a1a;
+  --mp-orange-hover: #e06d12;
+  --mp-orange-soft: #fff4ec;
+  --mp-black: #1a1a1a;
+  --mp-topbar: #333333;
+  --mp-text: #1a1a1a;
+  --mp-text-muted: #666666;
+  --mp-text-faint: #999999;
+  --mp-bg: #f5f5f5;
+  --mp-surface: #ffffff;
+  --mp-border: #e6e6e6;
+  --mp-success: #0a9d3c;
+  --mp-star: #f5a524;
+
+  /* Eski değişken adlarıyla uyumluluk */
+  --ts-ink: var(--mp-text);
+  --ts-ink-muted: var(--mp-text-muted);
+  --ts-ink-faint: var(--mp-text-faint);
+  --ts-cream: var(--mp-bg);
+  --ts-sand: #ebebeb;
+  --ts-surface: var(--mp-surface);
+  --ts-border: var(--mp-border);
+  --ts-coral: var(--mp-orange);
+  --ts-mint: var(--mp-success);
+  --ts-glow: #ffe0cc;
+
+  --background: var(--mp-bg);
+  --foreground: var(--mp-text);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  --font-display: var(--font-sans);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--mp-orange) 28%, transparent);
+}
+
+/* Kategori şeridi yatay kaydırma */
+.mp-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mp-border) transparent;
+}
+.mp-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.mp-scroll::-webkit-scrollbar-thumb {
+  background: var(--mp-border);
+  border-radius: 4px;
+}
