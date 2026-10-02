@@ -1,8 +1,8 @@
-import { API_BASE } from "@/lib/config";
+import { SERVER_API_BASE } from "@/lib/config";
 
 async function fetchJson(path: string) {
   try {
-    const res = await fetch(`${API_BASE}${path}`, {
+    const res = await fetch(`${SERVER_API_BASE}${path}`, {
       next: { revalidate: 0 },
       headers: { Accept: "application/json" },
     });
@@ -33,7 +33,7 @@ export default async function DevStatusPage() {
       </h1>
       <p className="mt-2 text-sm text-[var(--ts-ink-muted)]">
         Backend:{" "}
-        <code className="rounded bg-[var(--ts-sand)] px-1">{API_BASE}</code>
+        <code className="rounded bg-[var(--ts-sand)] px-1">{SERVER_API_BASE}</code>
       </p>
       <div className="mt-8 space-y-6">
         <section>

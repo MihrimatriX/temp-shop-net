@@ -14,4 +14,11 @@ export const API_BASE = (readRuntimeApiBase() ??
   "http://localhost:5000"
 ).replace(/\/$/, "");
 
+/**
+ * Sunucu tarafı (SSR) isteklerinin adresi — `server-api.ts` ve `/dev/status` kullanır.
+ * Docker'da konteyner içindeki "localhost" API değil konteynerin kendisidir;
+ * bu yüzden tarayıcı adresinden (API_BASE) ayrı ayarlanabilmeli: `API_INTERNAL_URL`.
+ */
+// TODO(human): export const SERVER_API_BASE = ...
+
 export const TOKEN_KEY = "temp-shop-token";

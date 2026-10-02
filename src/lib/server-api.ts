@@ -1,4 +1,4 @@
-import { API_BASE } from "./config";
+import { SERVER_API_BASE } from "./config";
 import type { BaseResponse } from "./types";
 
 export async function serverFetch<T>(
@@ -7,7 +7,7 @@ export async function serverFetch<T>(
 ): Promise<T | null> {
   const { revalidate, ...rest } = init ?? {};
   try {
-    const res = await fetch(`${API_BASE}${path}`, {
+    const res = await fetch(`${SERVER_API_BASE}${path}`, {
       ...rest,
       headers: { Accept: "application/json", ...rest.headers },
       next: revalidate !== undefined ? { revalidate } : { revalidate: 30 },
